@@ -1,0 +1,164 @@
+jesfs_hl.c:163:33: warning: Either the condition 'pd->m>59' is redundant or the array 'days_summed[12]' is accessed at index 58, which is out of bounds. [arrayIndexOutOfBoundsCond]
+  nsec += ((uint32_t)days_summed[pd->m - 1] + (pd->d - 1)) * SEC_DAY; // plus days for 4-years
+                                ^
+jesfs_hl.c:158:27: note: Assuming that condition 'pd->m>59' is not redundant
+  if (pd->h > 23 || pd->m > 59 || pd->sec > 59)
+                          ^
+jesfs_hl.c:163:33: note: Array index out of bounds
+  nsec += ((uint32_t)days_summed[pd->m - 1] + (pd->d - 1)) * SEC_DAY; // plus days for 4-years
+                                ^
+jesfs_hl.c:158:27: style: Condition 'pd->m>59' is always false [knownConditionTrueFalse]
+  if (pd->h > 23 || pd->m > 59 || pd->sec > 59)
+                          ^
+jesfs_hl.c:151:26: note: Assuming that condition 'pd->m>12' is not redundant
+  if (pd->m < 1 || pd->m > 12 || pd->d < 1)
+                         ^
+jesfs_hl.c:158:27: note: Condition 'pd->m>59' is always false
+  if (pd->h > 23 || pd->m > 59 || pd->sec > 59)
+                          ^
+jesfs_hl.c:366:30: style: Variable 'sflash_info.lusect_adr' is reassigned a value before the old one has been used. 'break;' missing? [redundantAssignInSwitch]
+      sflash_info.lusect_adr = sadr;
+                             ^
+jesfs_hl.c:363:30: note: $symbol is assigned
+      sflash_info.lusect_adr = sadr;
+                             ^
+jesfs_hl.c:366:30: note: $symbol is overwritten
+      sflash_info.lusect_adr = sadr;
+                             ^
+jesfs_hl.c:370:30: style: Variable 'sflash_info.lusect_adr' is reassigned a value before the old one has been used. 'break;' missing? [redundantAssignInSwitch]
+      sflash_info.lusect_adr = sadr;
+                             ^
+jesfs_hl.c:366:30: note: $symbol is assigned
+      sflash_info.lusect_adr = sadr;
+                             ^
+jesfs_hl.c:370:30: note: $symbol is overwritten
+      sflash_info.lusect_adr = sadr;
+                             ^
+jesfs_hl.c:52:8: style: The scope of the variable 'c' can be reduced. [variableScope]
+  char c;
+       ^
+jesfs_hl.c:203:11: style: The scope of the variable 'res' can be reduced. [variableScope]
+  int16_t res;
+          ^
+jesfs_hl.c:236:12: style: The scope of the variable 'wlen' can be reduced. [variableScope]
+  uint16_t wlen;
+           ^
+jesfs_hl.c:257:11: style: The scope of the variable 'res' can be reduced. [variableScope]
+  int16_t res;
+          ^
+jesfs_hl.c:258:12: style: The scope of the variable 'blen' can be reduced. [variableScope]
+  uint16_t blen;
+           ^
+jesfs_hl.c:446:12: style: The scope of the variable 'sadr' can be reduced. [variableScope]
+  uint32_t sadr;
+           ^
+jesfs_hl.c:686:12: style: The scope of the variable 'maxwrite' can be reduced. [variableScope]
+  uint32_t maxwrite;
+           ^
+jesfs_hl.c:687:12: style: The scope of the variable 'wlen' can be reduced. [variableScope]
+  uint32_t wlen;
+           ^
+jesfs_hl.c:743:11: style: The scope of the variable 'res' can be reduced. [variableScope]
+  int16_t res;
+          ^
+jesfs_hl.c:745:12: style: The scope of the variable 'hinfo' can be reduced. [variableScope]
+  uint32_t hinfo[2];
+           ^
+jesfs_hl.c:553:0: information: Skipping configuration 'SF_RD_TRANSFER_LIMIT' since the value of 'SF_RD_TRANSFER_LIMIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      if (pdest && max_sec_rd > SF_RD_TRANSFER_LIMIT)
+^
+jesfs_hl.c:554:0: information: Skipping configuration 'SF_RD_TRANSFER_LIMIT' since the value of 'SF_RD_TRANSFER_LIMIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        max_sec_rd = SF_RD_TRANSFER_LIMIT;
+^
+jesfs_ml.c:72:0: information: Skipping configuration 'DEBUG_FORCE_MINIDISK_DENSITY' since the value of 'DEBUG_FORCE_MINIDISK_DENSITY' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ h=DEBUG_FORCE_MINIDISK_DENSITY; // MiniDisc >= 2 Sectors Minimum
+^
+jesfs_ml.c:204:0: information: Skipping configuration 'SF_TX_TRANSFER_LIMIT' since the value of 'SF_TX_TRANSFER_LIMIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if(maxwrite>SF_TX_TRANSFER_LIMIT) maxwrite=SF_TX_TRANSFER_LIMIT;
+^
+platform_CC13XX_CC26XX/tb_tools_cc.c:331:24: warning: Either the condition 'uart_rxidx_out==128' is redundant or the array 'uart_rx_buf[128]' is accessed at index 128, which is out of bounds. [arrayIndexOutOfBoundsCond]
+        res=uart_rx_buf[uart_rxidx_out++];    // Clip
+                       ^
+platform_CC13XX_CC26XX/tb_tools_cc.c:332:26: note: Assuming that condition 'uart_rxidx_out==128' is not redundant
+        if(uart_rxidx_out==UART_RX_BUFSIZE) uart_rxidx_out=0;
+                         ^
+platform_CC13XX_CC26XX/tb_tools_cc.c:331:24: note: Array index out of bounds
+        res=uart_rx_buf[uart_rxidx_out++];    // Clip
+                       ^
+platform_CC13XX_CC26XX/tb_tools_cc.c:343:13: style: The scope of the variable 'res' can be reduced. [variableScope]
+    int16_t res;
+            ^
+platform_SAMD20/tb_tools_atmelstart.c:230:13: style: The scope of the variable 'res' can be reduced. [variableScope]
+    int16_t res;
+            ^
+platform_WIN/JesFs_ll_pc.c:162:3: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  printf("<LL: ERROR State:%d - Read len:%d Bytes>", sim_flash.state,len);
+  ^
+platform_WIN/JesFs_ll_pc.c:171:11: style: The scope of the variable 'mx' can be reduced. [variableScope]
+ uint32_t mx;
+          ^
+platform_WIN/JesFs_ll_pc.c:173:10: style: The scope of the variable 'o' can be reduced. [variableScope]
+ uint8_t o,w;
+         ^
+platform_WIN/tb_tools_win.c:181:20: style: Condition '!--max_wait_ms' is always true [knownConditionTrueFalse]
+                if(!--max_wait_ms){
+                   ^
+platform_WIN/tb_tools_win.c:180:16: note: Assuming condition 'max_wait_ms' is true
+            if(max_wait_ms){
+               ^
+platform_WIN/tb_tools_win.c:181:20: note: Condition '!--max_wait_ms' is always true
+                if(!--max_wait_ms){
+                   ^
+platform_WIN/tb_tools_win.c:155:10: style: The scope of the variable 'res' can be reduced. [variableScope]
+ int16_t res;
+         ^
+platform_nRF52/JesFs_ll_pca100xx.c:152:14: style: The scope of the variable 'rlen' can be reduced. [variableScope]
+    uint16_t rlen;
+             ^
+platform_nRF52/JesFs_ll_pca100xx.c:170:14: style: The scope of the variable 'wlen' can be reduced. [variableScope]
+    uint16_t wlen;
+             ^
+platform_nRF52/JesFs_ll_pca100xx.c:116:0: information: Skipping configuration 'FPIN_LED' since the value of 'FPIN_LED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    nrf_gpio_cfg_output(FPIN_LED);  // Might be already init from bsp-drivers
+^
+platform_nRF52/JesFs_ll_pca100xx.c:131:0: information: Skipping configuration 'FPIN_LED' since the value of 'FPIN_LED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    nrf_gpio_pin_toggle(FPIN_LED);  // Hear Me Working! Led Toggle
+^
+platform_nRF52/JesFs_ll_pca100xx.c:139:0: information: Skipping configuration 'FPIN_LED' since the value of 'FPIN_LED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        nrf_gpio_pin_clear(FPIN_LED);  // Hear Me Working! Led ON (0 on PCA10056)
+^
+platform_nRF52/JesFs_ll_pca100xx.c:145:0: information: Skipping configuration 'FPIN_LED' since the value of 'FPIN_LED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        nrf_gpio_pin_set(FPIN_LED);  // Hear Me Working! Led Off (1 on PCA10056)
+^
+platform_nRF52/tb_tools_nrf52.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+platform_nRF52/tb_tools_nrf52.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+usecase_BlackBox/blackbox_main.c:118:11: style: The scope of the variable 'asecs' can be reduced. [variableScope]
+ uint32_t asecs;
+          ^
+usecase_BlackBox/blackbox_main.c:119:11: style: The scope of the variable 'len' can be reduced. [variableScope]
+ uint16_t len;
+          ^
+jesfs_hl.c:75:0: style: The function 'fs_set_static_secs' is never used. [unusedFunction]
+
+^
+platform_WIN/JesFs_ll_pc.c:327:0: style: The function 'll_get_info_vdisk' is never used. [unusedFunction]
+
+^
+JesFs_main.c:128:0: style: The function 'mainThread' is never used. [unusedFunction]
+
+^
+platform_WIN/tb_tools_win.c:79:0: style: The function 'tb_wdt_event_handler' is never used. [unusedFunction]
+
+^
+platform_CC13XX_CC26XX/tb_tools_cc.c:153:0: style: The function 'uart_close' is never used. [unusedFunction]
+
+^
+platform_CC13XX_CC26XX/tb_tools_cc.c:229:0: style: The function 'watchdogCallback' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
